@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,13 +10,21 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,8,8,0.92)] backdrop-blur-md">
       <div className="mx-auto max-w-[1200px] flex items-center justify-between px-6 py-4">
-        <Link href="/" className="flex flex-col leading-none gap-0.5">
-          <span className="font-mono text-[12px] text-mint tracking-[0.2em]">
-            cmd
-          </span>
-          <span className="font-sans text-[24px] font-[800] text-white tracking-[-0.04em] leading-none">
-            Return
-          </span>
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/cmdreturn_profile_800.png"
+            alt="CmdReturn"
+            width={36}
+            height={36}
+          />
+          <div className="flex flex-col leading-none gap-0.5">
+            <span className="font-mono text-[12px] text-mint tracking-[0.2em]">
+              cmd
+            </span>
+            <span className="font-sans text-[24px] font-[800] text-white tracking-[-0.04em] leading-none">
+              Return
+            </span>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

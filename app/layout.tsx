@@ -17,6 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cmdreturn.io"),
   title: "CmdReturn — Retail Management Platform",
   description:
     "Built for Canadian independent retailers and the institutions that serve them. From the sales floor to the invoice.",
@@ -28,6 +29,29 @@ export const metadata: Metadata = {
     "SaaS",
     "CmdReturn",
   ],
+  openGraph: {
+    title: "CmdReturn — Retail Management Platform",
+    description:
+      "Built for Canadian independent retailers and the institutions that serve them. From the sales floor to the invoice.",
+    url: "https://cmdreturn.io",
+    siteName: "CmdReturn",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1500,
+        height: 500,
+        alt: "CmdReturn — Retail Management Platform",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CmdReturn — Retail Management Platform",
+    description:
+      "Built for Canadian independent retailers and the institutions that serve them. From the sales floor to the invoice.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

@@ -5,7 +5,13 @@
       "Bash(npm run:*)",
       "Bash(gh auth:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh api:*)",
+      "Bash(gh repo:*)",
+      "Bash(cp \"/c/Users/WD-PC1/OneDrive/Desktop/CmdReturn Assets/cmdreturn_favicon_64.png.png\" \"/c/Users/WD-PC1/OneDrive/Desktop/Website/cmdreturn-web/public/icon.png\")",
+      "Bash(cp \"/c/Users/WD-PC1/OneDrive/Desktop/CmdReturn Assets/cmdreturn_favicon_64.png.png\" \"/c/Users/WD-PC1/OneDrive/Desktop/Website/cmdreturn-web/public/apple-icon.png\")",
+      "Bash(git push:*)"
     ]
   }
 }
