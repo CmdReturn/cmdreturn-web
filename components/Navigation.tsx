@@ -41,6 +41,12 @@ export default function Navigation() {
             Institutional
           </Link>
           <Link
+            href="/offers"
+            className="font-sans text-[14px] font-normal text-muted hover:text-white transition-colors duration-150"
+          >
+            Offers
+          </Link>
+          <Link
             href="/about"
             className="font-sans text-[14px] font-normal text-muted hover:text-white transition-colors duration-150"
           >
@@ -97,6 +103,13 @@ export default function Navigation() {
             className="font-sans text-[14px] text-muted hover:text-white transition-colors duration-150"
           >
             Institutional
+          </Link>
+          <Link
+            href="/offers"
+            onClick={() => setMobileOpen(false)}
+            className="font-sans text-[14px] text-muted hover:text-white transition-colors duration-150"
+          >
+            Offers
           </Link>
           <Link
             href="/about"
