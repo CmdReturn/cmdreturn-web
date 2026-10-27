@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Press Enter on your business | CmdReturn",
     description:
-      "Fixed-price software for small businesses, delivered in weeks by a senior engineer who runs his own three-location retail business on what he builds.",
+      "Fixed-price software for small businesses, delivered in weeks by a senior engineer who built, and runs, the systems a three-location retailer operates on.",
     url: "https://cmdreturn.io/offers",
     siteName: "CmdReturn",
     type: "website",
@@ -153,8 +153,8 @@ export default function OffersPage() {
             Fixed-price software for small businesses: urgent bugs fixed in two
             days, AI-built apps made production-ready, AI workflows live in ten
             days, and systems built from scratch. Delivered in weeks by a senior
-            engineer who runs his own three-location retail business on what he
-            builds.
+            engineer who built, and runs, the systems a three-location retailer
+            operates on.
           </p>
           <p className="cr-hero-note">
             Based in Mississauga, Ontario. Every request answered within one
@@ -246,21 +246,22 @@ export default function OffersPage() {
 
       <section className="cr-section" aria-labelledby="proof-h">
         <div className="cr-wrap">
-          <h2 id="proof-h">Built by someone who runs his business on it</h2>
+          <h2 id="proof-h">Built by someone whose stores run on it</h2>
           <div className="cr-proof">
             <div>
               <p>
-                I am Dave Miller, founder of CmdReturn and owner-operator of
-                Teletime Superstore, a three-location appliance and furniture
-                retailer in the Toronto area founded in 1986. The quoting,
-                inventory and point-of-sale system our stores run on is one I
+                I am Dave Miller, founder of CmdReturn and head of IT and
+                security at Teletime Superstore, a three-location appliance and
+                furniture retailer in the Toronto area founded in 1986, where I
+                have also run a sales floor since 2016. The quoting, inventory
+                and point-of-sale system the stores run on is one I
                 built myself, and I use AI-augmented development to deliver the
                 same kind of software to other small businesses in weeks instead
                 of months.
               </p>
               <p>
-                That means the bar for your project is the one I hold my own
-                stores to: production, not demo.
+                That means the bar for your project is the one the stores hold
+                me to every day: production, not demo.
               </p>
               <div className="cr-stack">
                 <strong>Stack:</strong> React, Next.js, Node, PostgreSQL, AWS,
