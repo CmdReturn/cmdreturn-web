@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      // The platform page became the /work case study.
+      { source: "/platform", destination: "/work", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

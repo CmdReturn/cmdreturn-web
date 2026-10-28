@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import Keycap from "@/components/Keycap";
 
 export const metadata: Metadata = {
   title: "About | CmdReturn",
+  description:
+    "Dave Miller, founder of CmdReturn, built the system a three-location Toronto-area retailer runs on, and now builds the same kind of software for other businesses.",
 };
 
 const paragraphs = [
-  "Teletime Superstore was founded in 1986. Appliances. Electronics. Furniture. Mattresses. Three locations in the Toronto area. Real inventory, real customers, real margins.",
-  "Dave Miller has run a sales floor and led IT and security there since 2016. For years the software never kept up. Clunky POS systems. Spreadsheets at midnight. Inventory that said one thing and the stockroom said another. A customer who drove forty-five minutes and left empty-handed because the system was wrong.",
+  "Dave Miller is the founder of CmdReturn, a fixed-price software studio for small businesses, based in Toronto.",
+  "Since 2016 he has run a sales floor and led IT and security at Teletime Superstore, an appliance, electronics, furniture and mattress retailer in the Toronto area, founded in 1986 and now operating three locations.",
+  "For years the software never kept up. Clunky POS systems. Spreadsheets at midnight. Inventory that said one thing and the stockroom said another. A customer who drove forty-five minutes and left empty-handed because the system was wrong.",
   "So he built the system Teletime’s three stores now run on. The quotation system, because quotes took too long. The inventory system, because there was no way to see every location at once. The CRM, because the best customers deserved better than a spreadsheet.",
-  "CmdReturn is the company he founded to build that kind of software for other businesses. Every feature in this platform came from a real problem on a real sales floor.",
-  "This is not a side project. This is not a demo. It is the system three stores run on every day.",
+  "CmdReturn is how he now builds the same kind of software for other businesses: urgent fixes, rescues of AI-built apps, AI integrations and custom systems, each scoped and priced before work starts.",
+  "The bar is the one the stores hold him to every day: production, not demo.",
 ];
 
 const stats = [
   { number: "3", label: "LOCATIONS" },
-  { number: "15+", label: "STAFF ON THE PLATFORM" },
+  { number: "15+", label: "STAFF ON THE SYSTEM" },
   { number: "3,600+", label: "AUTOMATED TESTS" },
 ];
 
@@ -27,7 +32,7 @@ export default function About() {
         <div className="max-w-[1200px] mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-teal tracking-[0.18em] mb-4">
-              // built at the counter. not in a boardroom.
+              {"// the founder"}
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
@@ -70,6 +75,30 @@ export default function About() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-carbon py-[64px] lg:py-[120px]">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <ScrollReveal>
+            <h2 className="font-sans font-[800] text-[32px] lg:text-[44px] text-white tracking-[-0.04em] leading-[1.1] max-w-[720px]">
+              Same standard, for your business.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.08}>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 mt-10">
+              <Keycap href="/contact" className="text-[15px]">
+                Get a fixed quote
+              </Keycap>
+              <Link
+                href="/work"
+                className="font-sans text-[14px] font-semibold text-[#9a9a9a] hover:text-white transition-colors duration-150"
+              >
+                Read the case study →
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

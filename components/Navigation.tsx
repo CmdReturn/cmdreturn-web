@@ -3,6 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Keycap from "@/components/Keycap";
+
+const LINKS = [
+  { href: "/work", label: "Work" },
+  { href: "/offers", label: "Offers" },
+  { href: "/about", label: "About" },
+];
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,36 +36,18 @@ export default function Navigation() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="/platform"
-            className="font-sans text-[14px] font-normal text-muted hover:text-white transition-colors duration-150"
-          >
-            Platform
-          </Link>
-          <Link
-            href="/institutional"
-            className="font-sans text-[14px] font-normal text-muted hover:text-white transition-colors duration-150"
-          >
-            Institutional
-          </Link>
-          <Link
-            href="/offers"
-            className="font-sans text-[14px] font-normal text-muted hover:text-white transition-colors duration-150"
-          >
-            Offers
-          </Link>
-          <Link
-            href="/about"
-            className="font-sans text-[14px] font-normal text-muted hover:text-white transition-colors duration-150"
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="font-sans text-[13px] font-semibold text-teal hover:text-mint transition-colors duration-150"
-          >
-            Request deep-dive →
-          </Link>
+          {LINKS.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="font-sans text-[14px] font-normal text-muted hover:text-white transition-colors duration-150"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Keycap href="/contact" className="text-[13px]">
+            Get a quote
+          </Keycap>
         </div>
 
         <button
@@ -67,13 +56,13 @@ export default function Navigation() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-5 h-[1px] bg-white transition-transform duration-150 ${mobileOpen ? "translate-y-[3.5px] rotate-45" : ""}`}
+            className={`block w-5 h-[1px] bg-white transition-transform duration-150 ${mobileOpen ? "translate-y-[7px] rotate-45" : ""}`}
           />
           <span
             className={`block w-5 h-[1px] bg-white transition-opacity duration-150 ${mobileOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block w-5 h-[1px] bg-white transition-transform duration-150 ${mobileOpen ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            className={`block w-5 h-[1px] bg-white transition-transform duration-150 ${mobileOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
           />
         </button>
       </div>
@@ -93,42 +82,24 @@ export default function Navigation() {
             Close
           </button>
         </div>
-        <div className="flex flex-col gap-6 px-6 pt-8">
-          <Link
-            href="/platform"
-            onClick={() => setMobileOpen(false)}
-            className="font-sans text-[14px] text-muted hover:text-white transition-colors duration-150"
-          >
-            Platform
-          </Link>
-          <Link
-            href="/institutional"
-            onClick={() => setMobileOpen(false)}
-            className="font-sans text-[14px] text-muted hover:text-white transition-colors duration-150"
-          >
-            Institutional
-          </Link>
-          <Link
-            href="/offers"
-            onClick={() => setMobileOpen(false)}
-            className="font-sans text-[14px] text-muted hover:text-white transition-colors duration-150"
-          >
-            Offers
-          </Link>
-          <Link
-            href="/about"
-            onClick={() => setMobileOpen(false)}
-            className="font-sans text-[14px] text-muted hover:text-white transition-colors duration-150"
-          >
-            About
-          </Link>
-          <Link
+        <div className="flex flex-col items-start gap-6 px-6 pt-8">
+          {LINKS.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setMobileOpen(false)}
+              className="font-sans text-[16px] text-muted hover:text-white transition-colors duration-150"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Keycap
             href="/contact"
             onClick={() => setMobileOpen(false)}
-            className="font-sans text-[13px] font-semibold text-teal hover:text-mint transition-colors duration-150"
+            className="text-[14px] mt-2"
           >
-            Request deep-dive →
-          </Link>
+            Get a quote
+          </Keycap>
         </div>
       </div>
 

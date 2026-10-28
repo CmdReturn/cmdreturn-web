@@ -7,30 +7,30 @@ interface CommandSequence {
   results: string[];
 }
 
+// Prices and terms match app/offers/data.ts.
 const sequences: CommandSequence[] = [
   {
-    command: "> cmdreturn --status",
+    command: "> cmdreturn quote --offer spot-fix",
     results: [
-      "✓ Inventory synced · 3 locations",
-      "✓ 48 orders processed today",
-      "✓ $12,480 revenue recorded",
-      "✓ 6 staff active · Mississauga",
+      "✓ Problem scoped · not-included list attached",
+      "✓ Fixed price: $450 · 2 business days",
+      "✓ Waiting for your approval",
     ],
   },
   {
-    command: '> cmdreturn --inventory --sku LG65C3',
+    command: "> cmdreturn audit ./your-ai-built-app",
     results: [
-      "SKU: LG-OLED65C3 · Stock: 3 · Mississauga",
-      "Last sale: 2h ago · $2,499",
-      "Reorder threshold: 2 · Status: ORDER",
+      "✓ Code, security, database, hosting, payments reviewed",
+      "✓ Findings ranked Critical to Low · effort estimated",
+      "✓ Fixed quote to ship · fee credited for 30 days",
     ],
   },
   {
-    command: "> cmdreturn --customer --id JB-0142",
+    command: "> cmdreturn ship --to production",
     results: [
-      "Jamie Banfield · Trade Account",
-      "Lifetime: $18,420 · Orders: 14",
-      "Discount: 10% · Status: ACTIVE",
+      "✓ Tests green · monitoring on · runbook written",
+      "✓ Deployed to your own accounts · code is yours",
+      "✓ 30-day warranty started",
     ],
   },
 ];
@@ -84,7 +84,8 @@ export default function Terminal() {
         }, 300);
         return () => clearTimeout(timeout);
       } else {
-        setPhase("waiting");
+        const timeout = setTimeout(() => setPhase("waiting"), 0);
+        return () => clearTimeout(timeout);
       }
     }
   }, [phase, visibleResults, currentSequence.results.length]);
@@ -97,7 +98,7 @@ export default function Terminal() {
   }, [phase, advanceSequence]);
 
   return (
-    <div className="mx-auto max-w-[640px] mt-16 bg-[#0A0A0A] border border-border-subtle rounded-lg p-6">
+    <div className="mx-auto max-w-[640px] mt-16 text-left bg-[#0A0A0A] border border-border-subtle rounded-lg p-6">
       <div className="flex gap-1.5 mb-5">
         <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />

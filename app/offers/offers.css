@@ -1,25 +1,28 @@
-/* CmdReturn — /offers
+/* CmdReturn — /offers (and the quote form on /contact)
    Every selector is prefixed .cr- so this file can be imported globally
-   without touching the rest of the site. Tokens live on .cr-offers. */
+   without touching the rest of the site. Uses the site's dark palette and
+   Inter; the keycap (.cr-key) itself lives in globals.css. */
 
 .cr-offers {
-  --cr-black: #000000;
-  --cr-paper: #ffffff;
-  --cr-signal: #10b7a4;       /* Signal teal: keycaps, marks */
-  --cr-signal-deep: #0a6e63;  /* teal that passes AA on white: links, key edges */
-  --cr-tint: #e8f8f5;         /* pale teal fill */
-  --cr-ink: #172220;
-  --cr-muted: #52635f;
-  --cr-rule: #d6e4e0;
-  --cr-font: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
-  --cr-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --cr-bg: #080808;          /* carbon */
+  --cr-bg-alt: #111111;      /* dark surface */
+  --cr-card: #0a0a0a;
+  --cr-ink: #ffffff;
+  --cr-body: #b5b5b5;
+  --cr-muted: #8a8a8a;
+  --cr-rule: #222222;
+  --cr-rule-soft: #1a1a1a;
+  --cr-signal: #10b7a4;      /* Signal teal: keycaps, marks */
+  --cr-link: #5dcaa5;        /* mint: inline links on dark */
+  --cr-font: var(--font-inter), system-ui, sans-serif;
+  --cr-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
   font-family: var(--cr-font);
-  font-size: 17px;
-  line-height: 1.55;
-  color: var(--cr-ink);
-  background: var(--cr-paper);
-  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--cr-body);
+  background: var(--cr-bg);
+  color-scheme: dark;
 }
 
 .cr-offers *,
@@ -27,104 +30,87 @@
 .cr-offers *::after { box-sizing: border-box; }
 
 .cr-wrap {
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.cr-offers a { color: var(--cr-signal-deep); }
-.cr-offers a:hover { text-decoration-thickness: 2px; }
+.cr-offers a:not(.cr-key) {
+  color: var(--cr-link);
+  text-underline-offset: 3px;
+}
+.cr-offers a:not(.cr-key):hover { color: #ffffff; }
 
 .cr-offers :focus-visible {
-  outline: 3px solid var(--cr-signal);
+  outline: 2px solid var(--cr-signal);
   outline-offset: 3px;
-}
-
-/* ---------- keycap: the one bold element ---------- */
-
-.cr-offers .cr-key {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
-  font-family: var(--cr-mono);
-  font-weight: 500;
-  line-height: 1;
-  color: var(--cr-black);
-  background: var(--cr-signal);
-  border: 0;
-  border-radius: 0.22em;
-  padding: 0.42em 0.8em 0.5em;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 0.22em 0 var(--cr-signal-deep);
-  transform: translateY(0);
-  transition: transform 90ms ease-out, box-shadow 90ms ease-out;
-}
-.cr-key:hover { text-decoration: none; }
-.cr-key:active,
-.cr-key.is-pressed {
-  transform: translateY(0.16em);
-  box-shadow: 0 0.06em 0 var(--cr-signal-deep);
-}
-.cr-key .cr-key-glyph { font-size: 1.1em; }
-.cr-key[aria-disabled="true"],
-.cr-key:disabled { opacity: 0.55; cursor: default; }
-
-.cr-hero .cr-key:focus-visible { outline-color: #ffffff; }
-
-@media (prefers-reduced-motion: reduce) {
-  .cr-key { transition: none; }
 }
 
 /* ---------- hero ---------- */
 
 .cr-hero {
-  background: var(--cr-black);
-  color: #ffffff;
-  padding: 96px 0 80px;
+  background: var(--cr-bg);
+  color: var(--cr-ink);
+  padding: 128px 0 72px;
+}
+
+.cr-eyebrow {
+  margin: 0 0 16px;
+  font-family: var(--cr-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #1d9e75;
 }
 
 .cr-hero h1 {
   margin: 0;
-  max-width: 17ch;
-  font-size: clamp(2.3rem, 5.4vw, 4.5rem);
-  font-weight: 600;
-  line-height: 1.06;
-  letter-spacing: -0.022em;
+  max-width: 14ch;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  color: var(--cr-ink);
 }
 .cr-hero h1 .cr-key {
-  font-size: 0.86em;
-  padding: 0.12em 0.42em 0.18em;
-  vertical-align: 0.06em;
-  margin: 0 0.06em;
+  font-size: 0.8em;
+  letter-spacing: 0;
+  padding: 0.1em 0.38em 0.16em;
+  vertical-align: 0.08em;
+  margin: 0.04em 0.04em;
 }
 
 .cr-hero-lead {
-  margin: 32px 0 0;
-  max-width: 58ch;
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
-  line-height: 1.5;
-  color: #d9e6e3;
+  margin: 28px 0 0;
+  max-width: 60ch;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #828282;
 }
 
 .cr-hero-note {
-  margin: 28px 0 0;
-  color: #9fb5b1;
-  font-size: 0.98rem;
+  margin: 20px 0 0;
+  font-family: var(--cr-mono);
+  font-size: 12px;
+  color: #7c7c7c;
 }
 
 /* ---------- sections ---------- */
 
-.cr-section { padding: 72px 0 24px; }
-.cr-section h2 {
-  margin: 0 0 10px;
-  font-size: clamp(1.6rem, 2.6vw, 2rem);
-  font-weight: 600;
-  letter-spacing: -0.015em;
+.cr-section { padding: 96px 0; background: var(--cr-bg); }
+.cr-section.cr-alt { background: var(--cr-bg-alt); }
+
+.cr-section h2,
+.cr-quote h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
   line-height: 1.15;
+  color: var(--cr-ink);
 }
 .cr-section-lead {
-  margin: 0 0 36px;
+  margin: 0 0 40px;
   max-width: 64ch;
   color: var(--cr-muted);
 }
@@ -135,68 +121,74 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 2px solid var(--cr-ink);
+  border-top: 2px solid var(--cr-signal);
 }
 
 .cr-offer {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 16px 40px;
-  padding: 40px 0 44px;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 16px 48px;
+  padding: 44px 0 48px;
   border-bottom: 1px solid var(--cr-rule);
+  scroll-margin-top: 88px; /* clears the fixed nav for /offers#id links */
 }
 
 .cr-price {
-  font-size: 2.1rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
   line-height: 1;
+  color: var(--cr-ink);
   font-variant-numeric: tabular-nums;
 }
 .cr-price .cr-from {
   display: block;
-  font-size: 0.95rem;
+  font-family: var(--cr-mono);
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0;
-  color: var(--cr-muted);
-  margin-bottom: 6px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7c7c7c;
+  margin-bottom: 8px;
 }
 .cr-price .cr-time {
   display: block;
-  margin-top: 10px;
-  font-size: 1rem;
+  margin-top: 12px;
+  font-family: var(--cr-mono);
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0;
-  color: var(--cr-muted);
+  letter-spacing: 0.04em;
+  color: var(--cr-signal);
 }
 
 .cr-offer h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.012em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.2;
+  color: var(--cr-ink);
 }
-.cr-offer p { margin: 0 0 14px; max-width: 62ch; }
+.cr-offer p { margin: 0 0 16px; max-width: 64ch; }
 .cr-offer ul {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   padding-left: 1.15em;
-  max-width: 62ch;
+  max-width: 64ch;
   list-style: disc; /* nested in the <ol>, so the browser would default to circles */
 }
-.cr-offer li { margin: 4px 0; }
-.cr-offer li::marker { color: var(--cr-signal-deep); }
+.cr-offer li { margin: 6px 0; }
+.cr-offer li::marker { color: var(--cr-signal); }
 .cr-not {
-  max-width: 62ch;
+  max-width: 64ch;
   color: var(--cr-muted);
-  font-size: 0.98rem;
+  font-size: 0.94rem;
 }
-.cr-offer .cr-key { margin-top: 20px; font-size: 1rem; }
+.cr-offer .cr-key { margin-top: 16px; font-size: 14px; }
 
 .cr-prices-note {
-  margin: 20px 0 0;
-  color: var(--cr-muted);
-  font-size: 0.95rem;
+  margin: 24px 0 0;
+  color: #7c7c7c;
+  font-size: 0.9rem;
 }
 
 /* ---------- how it works: a real sequence, so it is numbered ---------- */
@@ -212,46 +204,50 @@
 }
 .cr-steps li {
   counter-increment: cr-step;
-  padding-top: 18px;
+  padding-top: 20px;
   border-top: 2px solid var(--cr-signal);
 }
 .cr-steps li::before {
-  content: counter(cr-step);
+  content: "0" counter(cr-step);
   display: block;
   font-family: var(--cr-mono);
-  font-weight: 500;
-  font-size: 1rem;
-  color: var(--cr-signal-deep);
-  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--cr-signal);
+  margin-bottom: 12px;
 }
 .cr-steps h3 {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
+  margin: 0 0 10px;
+  font-size: 1.06rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.35;
+  color: var(--cr-ink);
 }
-.cr-steps p { margin: 0; color: var(--cr-muted); font-size: 0.98rem; }
+.cr-steps p { margin: 0; color: var(--cr-muted); font-size: 0.94rem; }
 
 /* ---------- proof ---------- */
 
 .cr-proof {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 40px;
+  gap: 48px;
   align-items: start;
 }
-.cr-proof p { margin: 0 0 16px; max-width: 60ch; }
+.cr-proof p { margin: 0 0 18px; max-width: 60ch; }
 .cr-proof ul { margin: 0; padding-left: 1.15em; list-style: disc; }
-.cr-proof li { margin: 8px 0; }
-.cr-proof li::marker { color: var(--cr-signal-deep); }
+.cr-proof li { margin: 10px 0; }
+.cr-proof li::marker { color: var(--cr-signal); }
 .cr-stack {
   margin-top: 24px;
   padding: 16px 18px;
-  background: var(--cr-tint);
-  border-radius: 6px;
-  font-size: 0.98rem;
+  background: var(--cr-card);
+  border: 1px solid var(--cr-rule);
+  border-radius: 8px;
+  font-family: var(--cr-mono);
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--cr-muted);
 }
-.cr-stack strong { font-weight: 600; }
+.cr-stack strong { font-weight: 500; color: var(--cr-ink); }
 
 /* ---------- terms ---------- */
 
@@ -259,49 +255,62 @@
   margin: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 40px;
+  gap: 32px 40px;
 }
-.cr-terms div { padding-top: 14px; border-top: 1px solid var(--cr-rule); }
-.cr-terms dt { font-weight: 600; margin-bottom: 4px; }
-.cr-terms dd { margin: 0; color: var(--cr-muted); font-size: 0.98rem; }
+.cr-terms div { padding-top: 16px; border-top: 1px solid var(--cr-rule); }
+.cr-terms dt {
+  margin-bottom: 6px;
+  font-family: var(--cr-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7c7c7c;
+}
+.cr-terms dd { margin: 0; color: var(--cr-body); font-size: 0.94rem; }
 
 /* ---------- quote form ---------- */
 
 .cr-quote {
-  margin-top: 56px;
-  padding: 64px 0 72px;
-  background: var(--cr-tint);
+  padding: 96px 0 120px;
+  background: var(--cr-bg-alt);
+  scroll-margin-top: 72px;
 }
-.cr-quote h2 { margin: 0 0 10px; }
 .cr-form {
   margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px 24px;
+  gap: 24px;
   max-width: 760px;
 }
-.cr-field { display: flex; flex-direction: column; gap: 6px; }
+.cr-field { display: flex; flex-direction: column; gap: 8px; }
 .cr-field--wide { grid-column: 1 / -1; }
-.cr-field label { font-weight: 600; font-size: 0.98rem; }
-.cr-field .cr-hint { color: var(--cr-muted); font-size: 0.9rem; }
+.cr-field label {
+  font-family: var(--cr-mono);
+  font-size: 13px;
+  font-weight: 400;
+  color: #828282;
+}
+.cr-field .cr-hint { color: #7c7c7c; font-size: 0.85rem; }
 .cr-field input,
 .cr-field select,
 .cr-field textarea {
   font: inherit;
+  font-size: 15px;
   color: var(--cr-ink);
-  background: #ffffff;
-  border: 2px solid var(--cr-ink);
-  border-radius: 6px;
+  background: var(--cr-card);
+  border: 1px solid var(--cr-rule);
+  border-radius: 4px;
   padding: 12px 14px;
   width: 100%;
 }
+.cr-field select option { background: #0a0a0a; }
+.cr-field ::placeholder { color: #666666; }
 .cr-field textarea { min-height: 150px; resize: vertical; }
 .cr-field input:focus,
 .cr-field select:focus,
 .cr-field textarea:focus {
   outline: none;
-  border-color: var(--cr-signal-deep);
-  box-shadow: 0 0 0 3px rgba(16, 183, 164, 0.35);
+  border-color: var(--cr-signal);
 }
 .cr-honey {
   position: absolute;
@@ -318,85 +327,48 @@
   gap: 16px 24px;
   margin-top: 4px;
 }
-.cr-form-actions .cr-key { font-size: 1.05rem; }
-.cr-status { margin: 0; font-size: 0.98rem; }
-.cr-status[data-state="error"] { color: #9a2f1f; }
-.cr-status[data-state="sent"] { color: var(--cr-signal-deep); font-weight: 600; }
+.cr-form-actions .cr-key { font-size: 15px; }
+.cr-status { margin: 0; font-size: 0.94rem; }
+.cr-status[data-state="error"] { color: #ff8a7a; }
+.cr-status[data-state="sent"] { color: var(--cr-link); font-weight: 600; }
 
-/* ---------- dark variant: the same form on /contact ---------- */
+/* ---------- compact variant: the same form inside the /contact card ---------- */
 
 .cr-offers.cr-dark {
-  --cr-paper: #0a0a0a;
-  --cr-ink: #ffffff;
-  --cr-muted: #828282;
-  --cr-signal: #1d9e75;
-  --cr-signal-deep: #0f6e56;
-  --cr-font: var(--font-inter), system-ui, sans-serif;
-  --cr-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
-  color-scheme: dark;
+  background: var(--cr-card);
   font-size: 15px;
 }
 .cr-dark .cr-form {
   margin-top: 0;
   grid-template-columns: 1fr;
-  gap: 24px;
 }
 .cr-dark .cr-field--wide,
 .cr-dark .cr-form-actions { grid-column: auto; }
-.cr-dark .cr-field label {
-  font-family: var(--cr-mono);
-  font-weight: 400;
-  font-size: 13px;
-  color: #828282;
-}
 .cr-dark .cr-field input,
 .cr-dark .cr-field select,
-.cr-dark .cr-field textarea {
-  background: transparent;
-  border: 1px solid #222222;
-  border-radius: 4px;
-}
-.cr-dark .cr-field select option { background: #0a0a0a; }
-.cr-dark .cr-field ::placeholder { color: #666666; }
-.cr-dark .cr-field input:focus,
-.cr-dark .cr-field select:focus,
-.cr-dark .cr-field textarea:focus {
-  border-color: var(--cr-signal);
-  box-shadow: none;
-}
-.cr-dark a { color: #5dcaa5; }
-.cr-dark .cr-status[data-state="error"] { color: #ff8a7a; }
-.cr-dark .cr-status[data-state="sent"] { color: #5dcaa5; }
-
-/* ---------- footer ---------- */
-
-.cr-foot {
-  padding: 40px 0 48px;
-  color: var(--cr-muted);
-  font-size: 0.95rem;
-}
-.cr-foot p { margin: 0 0 6px; }
+.cr-dark .cr-field textarea { background: transparent; }
 
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
   .cr-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cr-proof { grid-template-columns: 1fr; }
+  .cr-proof { grid-template-columns: 1fr; gap: 32px; }
   .cr-terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 640px) {
-  .cr-wrap { padding: 0 16px; }
-  .cr-hero { padding: 104px 0 56px; }
-  .cr-section { padding: 56px 0 16px; }
+  .cr-hero { padding: 112px 0 56px; }
+  .cr-section { padding: 64px 0; }
+  .cr-quote { padding: 64px 0 80px; }
   .cr-offer {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
     padding: 32px 0 36px;
   }
-  .cr-price { font-size: 1.9rem; }
+  .cr-price { font-size: 2.1rem; }
   .cr-price .cr-time { display: inline; margin: 0 0 0 10px; }
-  .cr-steps { grid-template-columns: 1fr; gap: 24px; }
+  .cr-offer .cr-key { white-space: normal; text-align: left; }
+  .cr-steps { grid-template-columns: 1fr; gap: 28px; }
   .cr-terms { grid-template-columns: 1fr; gap: 20px; }
   .cr-form { grid-template-columns: 1fr; }
   .cr-field--wide { grid-column: auto; }
