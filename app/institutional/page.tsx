@@ -17,10 +17,6 @@ const evidence = [
     detail: "Built around Canadian privacy law (PIPEDA)",
   },
   {
-    label: "CANADIAN DATA RESIDENCY",
-    detail: "Hosted in Canada — AWS ca-central-1, Montreal",
-  },
-  {
     label: "HST REGISTERED",
     detail: "Ontario HST account — proper invoicing from day one",
   },
@@ -100,8 +96,7 @@ export default function Institutional() {
           <ScrollReveal delay={0.08}>
             <p className="font-sans font-light text-[16px] text-[#828282] mt-4 max-w-[480px] mx-auto leading-[1.7]">
               Not a US company with a Canadian office. A federally incorporated
-              Canadian company, built by a 40-year Ontario retailer, running on
-              Canadian infrastructure.
+              Canadian company, built by a 40-year Ontario retailer.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.16}>
