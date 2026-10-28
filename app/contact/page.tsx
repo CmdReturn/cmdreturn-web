@@ -52,7 +52,7 @@ export default function Contact() {
                 type="text"
                 required
                 placeholder="your name"
-                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-[#7c7c7c] focus:border-teal transition-colors duration-150"
+                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-[#666666] focus:border-teal transition-colors duration-150"
               />
             </div>
 
@@ -64,7 +64,7 @@ export default function Contact() {
                 name="org"
                 type="text"
                 placeholder="company or institution"
-                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-[#7c7c7c] focus:border-teal transition-colors duration-150"
+                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-[#666666] focus:border-teal transition-colors duration-150"
               />
             </div>
 
@@ -76,7 +76,7 @@ export default function Contact() {
                 name="message"
                 required
                 placeholder="describe what you are trying to solve"
-                className="w-full h-[100px] bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none resize-none placeholder:text-[#7c7c7c] focus:border-teal transition-colors duration-150"
+                className="w-full h-[100px] bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none resize-none placeholder:text-[#666666] focus:border-teal transition-colors duration-150"
               />
             </div>
 

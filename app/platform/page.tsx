@@ -72,7 +72,7 @@ export default function Platform() {
             className={`py-[64px] lg:py-[120px] ${i % 2 === 0 ? "bg-carbon" : "bg-dark-surface"}`}
           >
             <div
-              className={`max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${reversed ? "direction-rtl" : ""}`}
+              className={`max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${i === 0 ? "items-start" : "items-center"} ${reversed ? "direction-rtl" : ""}`}
             >
               <div
                 className={`${reversed ? "lg:order-2" : ""}`}
