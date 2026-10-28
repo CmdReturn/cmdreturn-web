@@ -70,7 +70,6 @@ const operations = [
 const results = [
   { number: "3", label: "STORES RUNNING ON IT DAILY" },
   { number: "15+", label: "STAFF USING IT" },
-  { number: "112", label: "SCREENS BUILT AND SHIPPED" },
   { number: "3,600+", label: "AUTOMATED TESTS" },
 ];
 
@@ -207,9 +206,9 @@ export default function Work() {
               <ScrollReveal
                 key={item.label}
                 delay={i * 0.06}
-                className="border-t-2 border-[#10b7a4] pt-5"
+                className="border-t-2 border-teal pt-5"
               >
-                <p className="font-mono text-[11px] text-[#10b7a4] tracking-[0.14em] mb-3">
+                <p className="font-mono text-[11px] text-teal tracking-[0.14em] mb-3">
                   {item.label}
                 </p>
                 <h3 className="font-sans text-[18px] font-semibold text-white mb-3">
@@ -238,16 +237,12 @@ export default function Work() {
               The system three stores run on, every day.
             </h2>
           </ScrollReveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3">
             {results.map((stat, i) => (
               <ScrollReveal
                 key={stat.label}
                 delay={i * 0.06}
-                className={[
-                  "pr-4 border-border-subtle",
-                  i % 2 === 1 ? "pl-4 lg:pl-6 border-l" : "",
-                  i === 2 ? "lg:pl-6 lg:border-l" : "",
-                ].join(" ")}
+                className={`py-6 sm:py-0 sm:pr-6 border-border-subtle ${i > 0 ? "border-t sm:border-t-0 sm:border-l sm:pl-6 lg:pl-8" : "pt-0"}`}
               >
                 <span className="block font-sans font-[800] text-[40px] lg:text-[56px] text-white tracking-[-0.04em] leading-[1.1]">
                   {stat.number}

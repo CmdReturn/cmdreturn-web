@@ -108,7 +108,7 @@ export default function Institutional() {
           <ScrollReveal delay={0.16}>
             <Link
               href="/contact"
-              className="inline-block font-mono text-[13px] text-teal hover:text-mint transition-colors duration-150 mt-8"
+              className="inline-block font-mono text-[13px] text-teal hover:text-white transition-colors duration-150 mt-8"
             >
               Request an institutional overview →
             </Link>

@@ -124,7 +124,7 @@ export default function Home() {
                     <p className="font-sans text-[14px] text-muted leading-[1.6] mt-2 flex-1">
                       {o.summary}
                     </p>
-                    <span className="font-mono text-[12px] text-teal group-hover:text-mint transition-colors duration-150 mt-5">
+                    <span className="font-mono text-[12px] text-teal group-hover:text-white transition-colors duration-150 mt-5">
                       Details →
                     </span>
                   </Link>
@@ -186,7 +186,7 @@ export default function Home() {
               <p className="font-mono text-[12px] text-[#7c7c7c] mt-6 leading-[1.8]">
                 POS · inventory · CRM · quoting · procurement · delivery
               </p>
-              <span className="inline-block font-mono text-[13px] text-teal group-hover:text-mint transition-colors duration-150 mt-8">
+              <span className="inline-block font-mono text-[13px] text-teal group-hover:text-white transition-colors duration-150 mt-8">
                 Read the case study →
               </span>
             </Link>
@@ -213,9 +213,9 @@ export default function Home() {
               <li key={step.title} className="list-none">
                 <ScrollReveal
                   delay={i * 0.06}
-                  className="border-t-2 border-[#10b7a4] pt-5"
+                  className="border-t-2 border-teal pt-5"
                 >
-                  <span className="block font-mono text-[13px] text-[#10b7a4] mb-3">
+                  <span className="block font-mono text-[13px] text-teal mb-3">
                     0{i + 1}
                   </span>
                   <h3 className="font-sans text-[17px] font-semibold text-white leading-[1.35] mb-3">
@@ -246,7 +246,7 @@ export default function Home() {
           <ScrollReveal delay={0.08}>
             <Link
               href="/about"
-              className="inline-block font-mono text-[13px] text-teal hover:text-mint transition-colors duration-150 mt-6"
+              className="inline-block font-mono text-[13px] text-teal hover:text-white transition-colors duration-150 mt-6"
             >
               About the founder →
             </Link>

@@ -12,8 +12,8 @@
   --cr-muted: #8a8a8a;
   --cr-rule: #222222;
   --cr-rule-soft: #1a1a1a;
-  --cr-signal: #10b7a4;      /* Signal teal: keycaps, marks */
-  --cr-link: #5dcaa5;        /* mint: inline links on dark */
+  --cr-signal: #1d9e75;      /* site teal: keycaps, marks */
+  --cr-link: var(--cr-signal); /* inline links use the same teal */
   --cr-font: var(--font-inter), system-ui, sans-serif;
   --cr-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
@@ -59,7 +59,7 @@
   font-family: var(--cr-mono);
   font-size: 11px;
   letter-spacing: 0.18em;
-  color: #1d9e75;
+  color: var(--cr-signal);
 }
 
 .cr-hero h1 {

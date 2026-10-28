@@ -69,7 +69,7 @@ body {
   }
 }
 
-/* ---------- keycap: the return-key button, in Signal teal ---------- */
+/* ---------- keycap: the return-key button, in the site teal ---------- */
 
 .cr-key {
   display: inline-flex;
@@ -80,26 +80,26 @@ body {
   line-height: 1;
   white-space: nowrap;
   color: #000000;
-  background: #10b7a4; /* Signal teal */
+  background: #1d9e75; /* site teal; black text passes AA (about 6.2:1) */
   border: 0;
   border-radius: 0.22em;
   padding: 0.62em 0.95em 0.7em;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 0.22em 0 #0a6e63;
+  box-shadow: 0 0.22em 0 #0f6e56; /* key edge, as in the logo */
   transform: translateY(0);
   transition: transform 90ms ease-out, box-shadow 90ms ease-out,
-    background-color 150ms ease-out;
+    filter 150ms ease-out;
 }
 .cr-key:hover {
-  background: #2cc8b5;
+  filter: brightness(1.12);
   color: #000000;
   text-decoration: none;
 }
 .cr-key:active,
 .cr-key.is-pressed {
   transform: translateY(0.16em);
-  box-shadow: 0 0.06em 0 #0a6e63;
+  box-shadow: 0 0.06em 0 #0f6e56;
 }
 .cr-key:focus-visible {
   outline: 2px solid #ffffff;
