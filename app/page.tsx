@@ -72,7 +72,7 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {[
-              { number: "2,652", label: "PRODUCTS CATALOGUED" },
+              { number: "3", label: "RETAIL LOCATIONS RUNNING LIVE" },
               { number: "112", label: "SCREENS BUILT AND SHIPPED" },
               { number: "$0", label: "AGENCY FEES PAID" },
             ].map((stat, i) => (

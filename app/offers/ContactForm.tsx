@@ -14,7 +14,7 @@ const OFFER_OPTIONS = [
 
 // Where the mailto fallback goes if the API is not configured yet.
 const FALLBACK_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@cmdreturn.io";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "dave@cmdreturn.io";
 
 type State = "idle" | "sending" | "sent" | "error";
 
