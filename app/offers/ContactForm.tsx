@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const OFFER_OPTIONS = [
   { value: "", label: "Not sure yet" },
@@ -20,6 +20,7 @@ type State = "idle" | "sending" | "sent" | "error";
 
 export default function ContactForm() {
   const params = useSearchParams();
+  const pathname = usePathname();
   const [offer, setOffer] = useState("");
   const [state, setState] = useState<State>("idle");
   const [error, setError] = useState("");
@@ -127,6 +128,9 @@ export default function ContactForm() {
           placeholder="What the app or process does, what breaks or what you want it to do, and by when."
         />
       </div>
+
+      {/* Which page the enquiry came from, e.g. /contact or /offers. */}
+      <input type="hidden" name="source" value={pathname} />
 
       {/* Honeypot: real people never see or fill this. */}
       <div className="cr-honey" aria-hidden="true">

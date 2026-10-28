@@ -25,6 +25,7 @@ type Payload = {
   offer: string;
   link: string;
   message: string;
+  source: string; // page path the form was sent from
   company?: string; // honeypot
 };
 
@@ -57,6 +58,7 @@ export async function POST(req: Request) {
     offer: clean(raw.offer, 40),
     link: clean(raw.link, 500),
     message: clean(raw.message, 5000),
+    source: clean(raw.source, 100),
   };
 
   if (!data.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
@@ -72,14 +74,16 @@ export async function POST(req: Request) {
     );
   }
   if (!(data.offer in OFFER_LABELS)) data.offer = "";
+  if (!/^\/[\w\-/]*$/.test(data.source)) data.source = "unknown";
 
   const offerLabel = OFFER_LABELS[data.offer];
-  const subject = `CmdReturn quote request: ${offerLabel} from ${data.name}`;
+  const subject = `CmdReturn quote request: ${offerLabel} from ${data.name} via ${data.source}`;
   const text = [
     `Name: ${data.name}`,
     `Email: ${data.email}`,
     `Offer: ${offerLabel}`,
     `Link: ${data.link || "-"}`,
+    `Source: ${data.source}`,
     "",
     data.message,
   ].join("\n");
