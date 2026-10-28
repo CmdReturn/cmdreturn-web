@@ -241,7 +241,7 @@
   align-items: start;
 }
 .cr-proof p { margin: 0 0 16px; max-width: 60ch; }
-.cr-proof ul { margin: 0; padding-left: 1.15em; }
+.cr-proof ul { margin: 0; padding-left: 1.15em; list-style: disc; }
 .cr-proof li { margin: 8px 0; }
 .cr-proof li::marker { color: var(--cr-signal-deep); }
 .cr-stack {
@@ -342,7 +342,7 @@
 
 @media (max-width: 640px) {
   .cr-wrap { padding: 0 16px; }
-  .cr-hero { padding: 64px 0 56px; }
+  .cr-hero { padding: 104px 0 56px; }
   .cr-section { padding: 56px 0 16px; }
   .cr-offer {
     grid-template-columns: 1fr;

@@ -34,14 +34,14 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.16}>
-              <p className="font-sans font-light text-[18px] text-[#444444] leading-[1.7] max-w-[420px] mx-auto mt-6">
+              <p className="font-sans font-light text-[18px] text-[#828282] leading-[1.7] max-w-[420px] mx-auto mt-6">
                 Built for Canadian independent retailers and the institutions
                 that serve them. From the sales floor to the invoice.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.24}>
-              <div className="flex items-center justify-center gap-8 mt-9">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-9">
                 <Link
                   href="/contact"
                   className="font-sans text-[14px] font-semibold text-teal hover:text-mint transition-colors duration-150"
@@ -50,7 +50,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/platform"
-                  className="font-sans text-[14px] text-[#333333] hover:text-muted transition-colors duration-150"
+                  className="font-sans text-[14px] text-[#7c7c7c] hover:text-white transition-colors duration-150"
                 >
                   View the platform →
                 </Link>
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Results */}
-      <section className="bg-carbon py-[120px] lg:py-[120px] py-[64px]">
+      <section className="bg-carbon py-[64px] lg:py-[120px]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {[
@@ -78,7 +78,7 @@ export default function Home() {
                   <span className="font-sans font-[800] text-[64px] text-white tracking-[-0.04em]">
                     {stat.number}
                   </span>
-                  <span className="font-mono text-[11px] text-[#444444] tracking-[0.12em] mt-2">
+                  <span className="font-mono text-[11px] text-[#828282] tracking-[0.12em] mt-2">
                     {stat.label}
                   </span>
                 </div>
@@ -97,7 +97,7 @@ export default function Home() {
       <section className="bg-dark-surface py-[64px] lg:py-[120px]">
         <div className="max-w-[1200px] mx-auto px-6">
           <ScrollReveal>
-            <p className="font-mono text-[11px] text-[#333333] tracking-[0.14em] mb-16">
+            <p className="font-mono text-[11px] text-[#7c7c7c] tracking-[0.14em] mb-16">
               THREE AUDIENCES. ONE PLATFORM.
             </p>
           </ScrollReveal>
@@ -150,7 +150,7 @@ export default function Home() {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <p className="font-sans font-light text-[16px] text-[#333333] mt-4">
+            <p className="font-sans font-light text-[16px] text-[#7c7c7c] mt-4">
               You hit it when you mean it. That is the software we build.
             </p>
           </ScrollReveal>

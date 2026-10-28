@@ -13,30 +13,30 @@ export default function Footer() {
               Return
             </span>
           </Link>
-          <p className="font-sans text-[14px] font-light text-[#333333]">
+          <p className="font-sans text-[14px] font-light text-[#7c7c7c]">
             Press Enter on your business.
           </p>
         </div>
 
-        <div className="font-mono text-[12px] text-[#333333] leading-[2.2] flex flex-col">
+        <div className="font-mono text-[12px] text-[#7c7c7c] leading-[2.2] flex flex-col">
           <span>cmdreturn.io</span>
           <span>cmdreturn.ca</span>
           <a
             href="mailto:dave@cmdreturn.io"
-            className="hover:text-muted transition-colors duration-150"
+            className="hover:text-white transition-colors duration-150"
           >
             dave@cmdreturn.io
           </a>
           <a
             href="tel:6475441775"
-            className="hover:text-muted transition-colors duration-150"
+            className="hover:text-white transition-colors duration-150"
           >
             647-544-1775
           </a>
           <span>Toronto, ON</span>
         </div>
 
-        <div className="font-mono text-[12px] text-[#333333] leading-[2.2] flex flex-col">
+        <div className="font-mono text-[12px] text-[#7c7c7c] leading-[2.2] flex flex-col">
           <span>CmdReturn Inc.</span>
           <span>Federally Incorporated</span>
           <span>Ontario, Canada</span>
@@ -46,7 +46,7 @@ export default function Footer() {
 
       <div className="border-t border-dark-surface">
         <div className="mx-auto max-w-[1200px] px-6 py-4">
-          <p className="font-mono text-[11px] text-border-visible">
+          <p className="font-mono text-[11px] text-[#7c7c7c]">
             © 2025 CmdReturn Inc. All rights reserved. // Built by operators.
           </p>
         </div>

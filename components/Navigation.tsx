@@ -8,6 +8,7 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
+    <>
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,8,8,0.92)] backdrop-blur-md">
       <div className="mx-auto max-w-[1200px] flex items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
@@ -76,9 +77,12 @@ export default function Navigation() {
           />
         </button>
       </div>
+    </nav>
 
+      {/* Drawer and overlay live outside <nav>: its backdrop-blur would
+          otherwise make them size to the nav bar instead of the screen. */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-[280px] bg-carbon border-l border-border-subtle transform transition-transform duration-200 ease-out ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`md:hidden fixed top-0 right-0 z-[60] h-full w-[280px] bg-carbon border-l border-border-subtle transform transition-transform duration-200 ease-out ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex justify-end p-6">
           <button
@@ -130,10 +134,10 @@ export default function Navigation() {
 
       {mobileOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black/60 z-[-1]"
+          className="md:hidden fixed inset-0 bg-black/60 z-40"
           onClick={() => setMobileOpen(false)}
         />
       )}
-    </nav>
+    </>
   );
 }

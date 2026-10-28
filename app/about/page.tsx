@@ -18,7 +18,7 @@ export default function About() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-carbon pt-32 pb-16 lg:pb-24">
+      <section className="bg-carbon pt-32">
         <div className="max-w-[1200px] mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-teal tracking-[0.18em] mb-4">
@@ -35,10 +35,10 @@ export default function About() {
 
       {/* Story */}
       <section className="bg-carbon py-[64px] lg:py-[120px]">
-        <div className="max-w-[680px] mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
           {paragraphs.map((text, i) => (
             <ScrollReveal key={i} delay={i * 0.06}>
-              <p className="font-sans text-[20px] text-muted leading-[1.9] mb-10">
+              <p className="font-sans text-[20px] text-muted leading-[1.9] mb-10 max-w-[632px]">
                 {text}
               </p>
             </ScrollReveal>
@@ -58,7 +58,7 @@ export default function About() {
                   <span className="font-sans font-[800] text-[64px] text-white tracking-[-0.04em]">
                     {stat.number}
                   </span>
-                  <span className="font-mono text-[11px] text-[#444444] tracking-[0.12em] mt-2">
+                  <span className="font-mono text-[11px] text-[#828282] tracking-[0.12em] mt-2">
                     {stat.label}
                   </span>
                 </div>

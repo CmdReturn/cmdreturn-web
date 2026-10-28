@@ -53,7 +53,7 @@ export default function Institutional() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-carbon pt-32 pb-16 lg:pb-24">
+      <section className="bg-carbon pt-32">
         <div className="max-w-[1200px] mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-teal tracking-[0.18em] mb-4">
@@ -66,7 +66,7 @@ export default function Institutional() {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.16}>
-            <p className="font-sans font-light text-[18px] text-[#444444] mt-4">
+            <p className="font-sans font-light text-[18px] text-[#828282] mt-4">
               No hype. Evidence only.
             </p>
           </ScrollReveal>
@@ -102,7 +102,7 @@ export default function Institutional() {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <p className="font-sans font-light text-[16px] text-[#444444] mt-4 max-w-[480px] mx-auto leading-[1.7]">
+            <p className="font-sans font-light text-[16px] text-[#828282] mt-4 max-w-[480px] mx-auto leading-[1.7]">
               Not a US company with a Canadian office. A federally incorporated
               Canadian company, built by a 40-year Ontario retailer, running on
               Canadian infrastructure.

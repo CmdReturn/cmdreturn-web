@@ -43,7 +43,7 @@ export default function Platform() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-carbon pt-32 pb-16 lg:pb-24">
+      <section className="bg-carbon pt-32">
         <div className="max-w-[1200px] mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-teal tracking-[0.18em] mb-4">
@@ -56,7 +56,7 @@ export default function Platform() {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.16}>
-            <p className="font-sans font-light text-[18px] text-[#444444] mt-4">
+            <p className="font-sans font-light text-[18px] text-[#828282] mt-4">
               Every feature exists because a real store needed it.
             </p>
           </ScrollReveal>
@@ -78,7 +78,7 @@ export default function Platform() {
                 className={`${reversed ? "lg:order-2" : ""}`}
               >
                 <ScrollReveal>
-                  <p className="font-mono text-[11px] text-[#333333] tracking-[0.14em] mb-3">
+                  <p className="font-mono text-[11px] text-[#7c7c7c] tracking-[0.14em] mb-3">
                     {feature.category}
                   </p>
                 </ScrollReveal>
@@ -94,7 +94,12 @@ export default function Platform() {
                 </ScrollReveal>
                 <ScrollReveal delay={0.24}>
                   <p className="font-mono text-[12px] text-teal">
-                    {feature.data}
+                    {feature.data.split(" · ").map((tag, j, all) => (
+                      <span key={tag}>
+                        <span className="whitespace-nowrap">{tag}</span>
+                        {j < all.length - 1 && " · "}
+                      </span>
+                    ))}
                   </p>
                 </ScrollReveal>
               </div>

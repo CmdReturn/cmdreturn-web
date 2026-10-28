@@ -33,7 +33,7 @@ export default function Contact() {
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={0.16}>
-          <p className="font-sans font-light text-[16px] text-[#444444] mt-4">
+          <p className="font-sans font-light text-[16px] text-[#828282] mt-4">
             We respond within one business day.
           </p>
         </ScrollReveal>
@@ -44,7 +44,7 @@ export default function Contact() {
             className="max-w-[560px] mx-auto mt-12 bg-[#0A0A0A] border border-border-subtle rounded-lg p-8 text-left"
           >
             <div className="mb-8">
-              <label className="block font-mono text-[13px] text-[#444444] mb-2">
+              <label className="block font-mono text-[13px] text-[#828282] mb-2">
                 {">"} identify yourself
               </label>
               <input
@@ -52,31 +52,31 @@ export default function Contact() {
                 type="text"
                 required
                 placeholder="your name"
-                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-border-visible focus:border-teal transition-colors duration-150"
+                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-[#7c7c7c] focus:border-teal transition-colors duration-150"
               />
             </div>
 
             <div className="mb-8">
-              <label className="block font-mono text-[13px] text-[#444444] mb-2">
+              <label className="block font-mono text-[13px] text-[#828282] mb-2">
                 {">"} your organization
               </label>
               <input
                 name="org"
                 type="text"
                 placeholder="company or institution"
-                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-border-visible focus:border-teal transition-colors duration-150"
+                className="w-full bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none placeholder:text-[#7c7c7c] focus:border-teal transition-colors duration-150"
               />
             </div>
 
             <div className="mb-8">
-              <label className="block font-mono text-[13px] text-[#444444] mb-2">
+              <label className="block font-mono text-[13px] text-[#828282] mb-2">
                 {">"} what do you need
               </label>
               <textarea
                 name="message"
                 required
                 placeholder="describe what you are trying to solve"
-                className="w-full h-[100px] bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none resize-none placeholder:text-border-visible focus:border-teal transition-colors duration-150"
+                className="w-full h-[100px] bg-transparent border-b border-border-visible font-mono text-[14px] text-white py-3 outline-none resize-none placeholder:text-[#7c7c7c] focus:border-teal transition-colors duration-150"
               />
             </div>
 
@@ -90,7 +90,7 @@ export default function Contact() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.32}>
-          <div className="font-mono text-[12px] text-[#333333] leading-[2.2] mt-12">
+          <div className="font-mono text-[12px] text-[#7c7c7c] leading-[2.2] mt-12">
             <p>dave@cmdreturn.io</p>
             <p>647-544-1775</p>
             <p>Toronto, Ontario, Canada</p>
