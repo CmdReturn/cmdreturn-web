@@ -13,21 +13,21 @@ const evidence = [
       "Extra-provincial registration — Ontario Corporations Information Act",
   },
   {
-    label: "PIPEDA COMPLIANT",
-    detail: "Canadian data privacy law compliance from day one",
+    label: "PRIVACY-FIRST",
+    detail: "Built around Canadian privacy law (PIPEDA)",
   },
   {
     label: "CANADIAN DATA RESIDENCY",
-    detail:
-      "AWS ca-central-1 Montreal — your data does not leave Canada",
+    detail: "Hosted in Canada — AWS ca-central-1, Montreal",
   },
   {
     label: "HST REGISTERED",
     detail: "Ontario HST account — proper invoicing from day one",
   },
   {
-    label: "NUANS VERIFIED",
-    detail: "Federal corporate name search — reservation 122834163",
+    label: "PRODUCTION-PROVEN",
+    detail:
+      "Running daily across three retail locations · 3,600+ automated tests",
   },
   {
     label: "AUDIT TRAIL",
@@ -42,10 +42,6 @@ const evidence = [
   {
     label: "NET-30 INVOICING",
     detail: "Institutional payment terms supported",
-  },
-  {
-    label: "VENDOR REGISTRATION",
-    detail: "MERX and Biddingo registration in progress",
   },
 ];
 
