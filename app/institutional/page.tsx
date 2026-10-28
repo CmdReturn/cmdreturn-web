@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: "Institutional | CmdReturn",
+};
 
 const evidence = [
   {
@@ -96,7 +101,8 @@ export default function Institutional() {
           <ScrollReveal delay={0.08}>
             <p className="font-sans font-light text-[16px] text-[#828282] mt-4 max-w-[480px] mx-auto leading-[1.7]">
               Not a US company with a Canadian office. A federally incorporated
-              Canadian company, built by a 40-year Ontario retailer.
+              Canadian company, founded by Dave Miller, who built the system
+              Teletime Superstore&rsquo;s three stores run on.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.16}>

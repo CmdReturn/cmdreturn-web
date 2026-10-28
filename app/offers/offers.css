@@ -323,6 +323,51 @@
 .cr-status[data-state="error"] { color: #9a2f1f; }
 .cr-status[data-state="sent"] { color: var(--cr-signal-deep); font-weight: 600; }
 
+/* ---------- dark variant: the same form on /contact ---------- */
+
+.cr-offers.cr-dark {
+  --cr-paper: #0a0a0a;
+  --cr-ink: #ffffff;
+  --cr-muted: #828282;
+  --cr-signal: #1d9e75;
+  --cr-signal-deep: #0f6e56;
+  --cr-font: var(--font-inter), system-ui, sans-serif;
+  --cr-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  color-scheme: dark;
+  font-size: 15px;
+}
+.cr-dark .cr-form {
+  margin-top: 0;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.cr-dark .cr-field--wide,
+.cr-dark .cr-form-actions { grid-column: auto; }
+.cr-dark .cr-field label {
+  font-family: var(--cr-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: #828282;
+}
+.cr-dark .cr-field input,
+.cr-dark .cr-field select,
+.cr-dark .cr-field textarea {
+  background: transparent;
+  border: 1px solid #222222;
+  border-radius: 4px;
+}
+.cr-dark .cr-field select option { background: #0a0a0a; }
+.cr-dark .cr-field ::placeholder { color: #666666; }
+.cr-dark .cr-field input:focus,
+.cr-dark .cr-field select:focus,
+.cr-dark .cr-field textarea:focus {
+  border-color: var(--cr-signal);
+  box-shadow: none;
+}
+.cr-dark a { color: #5dcaa5; }
+.cr-dark .cr-status[data-state="error"] { color: #ff8a7a; }
+.cr-dark .cr-status[data-state="sent"] { color: #5dcaa5; }
+
 /* ---------- footer ---------- */
 
 .cr-foot {

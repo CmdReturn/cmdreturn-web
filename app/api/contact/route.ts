@@ -4,7 +4,7 @@ export const runtime = "nodejs";
 
 /*
   POST /api/contact
-  Delivers quote requests from /offers. Two delivery routes, tried in order:
+  Delivers enquiries from the /offers and /contact forms. Two delivery routes, tried in order:
     1. Resend (https://resend.com)  — set RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL
     2. Any webhook (Zapier, n8n, Slack) — set CONTACT_WEBHOOK_URL
   With neither set it returns 503 and the form offers a mailto fallback.

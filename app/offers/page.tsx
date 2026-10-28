@@ -157,7 +157,7 @@ export default function OffersPage() {
             operates on.
           </p>
           <p className="cr-hero-note">
-            Based in Mississauga, Ontario. Every request answered within one
+            Based in Toronto, Ontario. Every request answered within one
             business day.
           </p>
         </div>
@@ -368,10 +368,10 @@ export default function OffersPage() {
 
       <footer className="cr-foot">
         <div className="cr-wrap">
-          <p>CmdReturn Inc., Mississauga, Ontario, Canada.</p>
+          <p>CmdReturn Inc., Toronto, Ontario.</p>
           <p>
             Prices in US dollars; Canadian businesses billed in Canadian dollars
-            plus 13% HST.
+            plus applicable GST/HST.
           </p>
         </div>
       </footer>

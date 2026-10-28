@@ -11,7 +11,7 @@ const sequences: CommandSequence[] = [
   {
     command: "> cmdreturn --status",
     results: [
-      "✓ Inventory synced · 2 locations",
+      "✓ Inventory synced · 3 locations",
       "✓ 48 orders processed today",
       "✓ $12,480 revenue recorded",
       "✓ 6 staff active · Mississauga",

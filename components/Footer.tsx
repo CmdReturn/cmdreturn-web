@@ -33,14 +33,14 @@ export default function Footer() {
           >
             647-544-1775
           </a>
-          <span>Toronto, ON</span>
+          <span>Toronto, Ontario</span>
         </div>
 
         <div className="font-mono text-[12px] text-[#7c7c7c] leading-[2.2] flex flex-col">
           <span>CmdReturn Inc.</span>
           <span>Federally Incorporated</span>
           <span>Ontario, Canada</span>
-          <span>PIPEDA Compliant</span>
+          <span>Privacy-first</span>
         </div>
       </div>
 

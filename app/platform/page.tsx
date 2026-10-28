@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: "Platform | CmdReturn",
+};
 
 const features = [
   {
@@ -11,7 +16,7 @@ const features = [
     category: "INVENTORY",
     name: "Multi-location inventory",
     why: "Because a product that exists in Mississauga and does not exist in Etobicoke is two different problems.",
-    data: "2,652 SKUs · 2 locations · serial tracking · procurement triggers",
+    data: "3 locations · serial tracking · procurement triggers",
   },
   {
     category: "CUSTOMER CRM",

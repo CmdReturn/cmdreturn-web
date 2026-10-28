@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Terminal from "@/components/Terminal";
 import ScrollReveal from "@/components/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: "Fixed-price software for small businesses | CmdReturn",
+};
 
 export default function Home() {
   return (
@@ -111,7 +116,7 @@ export default function Home() {
               },
               {
                 title: "Institutional Buyers",
-                body: "Procurement requires precision. Audit trails. PIPEDA compliance. Role-based access. Net-30 invoicing. We speak your language.",
+                body: "Procurement requires precision. Audit trails. Privacy-first, built around Canadian privacy law (PIPEDA). Role-based access. Net-30 invoicing. We speak your language.",
                 link: { text: "See compliance →", href: "/institutional" },
               },
               {

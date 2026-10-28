@@ -1,17 +1,22 @@
+import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
 
+export const metadata: Metadata = {
+  title: "About | CmdReturn",
+};
+
 const paragraphs = [
-  "Teletime Superstore opened in Mississauga in the 1980s. Appliances. Electronics. Furniture. Mattresses. Two locations. Fifteen staff. Real inventory, real customers, real margins.",
-  "For forty years, the software never kept up. Clunky POS systems. Spreadsheets at midnight. Inventory that said one thing and the stockroom said another. A customer who drove forty-five minutes and left empty-handed because the system was wrong.",
-  "CmdReturn exists because we ran out of patience with software built by people who have never worked a sales floor. Every feature in this platform came from a real problem we could not solve any other way.",
-  "We built the quotation system because our quotes took too long. We built the inventory system because we had two locations and no way to see both at once. We built the CRM because our best customers deserved better than a spreadsheet.",
-  "This is not a side project. This is not a demo. This is the system our store runs on.",
+  "Teletime Superstore was founded in 1986. Appliances. Electronics. Furniture. Mattresses. Three locations in the Toronto area. Real inventory, real customers, real margins.",
+  "Dave Miller has run a sales floor and led IT and security there since 2016. For years the software never kept up. Clunky POS systems. Spreadsheets at midnight. Inventory that said one thing and the stockroom said another. A customer who drove forty-five minutes and left empty-handed because the system was wrong.",
+  "So he built the system Teletime’s three stores now run on. The quotation system, because quotes took too long. The inventory system, because there was no way to see every location at once. The CRM, because the best customers deserved better than a spreadsheet.",
+  "CmdReturn is the company he founded to build that kind of software for other businesses. Every feature in this platform came from a real problem on a real sales floor.",
+  "This is not a side project. This is not a demo. It is the system three stores run on every day.",
 ];
 
 const stats = [
-  { number: "40+", label: "YEARS IN RETAIL" },
-  { number: "2", label: "LOCATIONS" },
+  { number: "3", label: "LOCATIONS" },
   { number: "15+", label: "STAFF ON THE PLATFORM" },
+  { number: "3,600+", label: "AUTOMATED TESTS" },
 ];
 
 export default function About() {
@@ -27,7 +32,7 @@ export default function About() {
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <h1 className="font-sans font-[800] text-[48px] lg:text-[72px] text-white tracking-[-0.055em] leading-[0.92]">
-              40 years.
+              Built on a sales floor.
             </h1>
           </ScrollReveal>
         </div>
