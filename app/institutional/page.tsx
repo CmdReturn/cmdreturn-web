@@ -54,7 +54,7 @@ export default function Institutional() {
         <div className="max-w-[1200px] mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-teal tracking-[0.18em] mb-4">
-              // for municipalities · school boards · housing authorities
+              {"// for municipalities · school boards · housing authorities"}
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
@@ -108,7 +108,7 @@ export default function Institutional() {
           <ScrollReveal delay={0.16}>
             <Link
               href="/contact"
-              className="inline-block font-mono text-[13px] text-teal hover:text-mint transition-colors duration-150 mt-8"
+              className="inline-block font-mono text-[13px] text-teal hover:text-white transition-colors duration-150 mt-8"
             >
               Request an institutional overview →
             </Link>
