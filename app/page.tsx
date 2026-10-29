@@ -105,14 +105,16 @@ export default function Home() {
                     href={`/offers#${o.id}`}
                     className="group flex flex-col h-full p-6 hover:bg-[#0d0d0d] transition-colors duration-150"
                   >
-                    <span className="font-sans text-[32px] font-[800] text-white tracking-[-0.04em] leading-none">
-                      {/* Reserve the "from" line on every card so prices align. */}
-                      <span
-                        className={`font-mono text-[11px] font-normal text-[#7c7c7c] tracking-[0.12em] mb-2 ${o.from ? "block" : "hidden md:block md:invisible"}`}
-                        aria-hidden={!o.from}
-                      >
-                        FROM
-                      </span>
+                    {/* Cards without a "from" label get matching top padding
+                        (11px label + 8px gap) so prices line up in a row. */}
+                    <span
+                      className={`font-sans text-[32px] font-[800] text-white tracking-[-0.04em] leading-none ${o.from ? "" : "md:pt-[19px]"}`}
+                    >
+                      {o.from && (
+                        <span className="block font-mono text-[11px] font-normal text-[#7c7c7c] tracking-[0.12em] mb-2">
+                          FROM
+                        </span>
+                      )}
                       {o.price}
                     </span>
                     <span className="font-mono text-[11px] text-teal tracking-[0.08em] mt-3">
