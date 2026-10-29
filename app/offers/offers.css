@@ -67,16 +67,24 @@
   max-width: 14ch;
   font-size: clamp(2.6rem, 6vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.02;
+  line-height: 1.2;
   letter-spacing: -0.05em;
   color: var(--cr-ink);
 }
+/* The Enter key sits on the text baseline and, edge included, stays
+   inside its own line box so it never touches the line below. */
 .cr-hero h1 .cr-key {
-  font-size: 0.8em;
+  font-size: 0.68em;
   letter-spacing: 0;
-  padding: 0.1em 0.38em 0.16em;
-  vertical-align: 0.08em;
-  margin: 0.04em 0.04em;
+  padding: 0.03em 0.32em 0.05em;
+  vertical-align: baseline;
+  margin: 0 0.04em;
+  box-shadow: 0 0.1em 0 #0f6e56;
+}
+.cr-hero h1 .cr-key .cr-key-glyph { font-size: 0.95em; }
+.cr-hero h1 .cr-key:active {
+  transform: translateY(0.07em);
+  box-shadow: 0 0.03em 0 #0f6e56;
 }
 
 .cr-hero-lead {
