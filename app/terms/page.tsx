@@ -68,9 +68,9 @@ export default function Terms() {
           <li>
             <strong>Payment.</strong> Spot Fix and Rescue Audit are paid in
             full to start. Builds are 50% to start and 50% at acceptance; over
-            $10,000, 40/30/30. Card or e-transfer. Prices are in US dollars;
-            Canadian businesses are billed in Canadian dollars plus applicable
-            GST/HST.
+            $10,000, 40/30/30. Card or e-transfer. Prices in US dollars.
+            Canadian businesses pay the same amount in Canadian dollars, plus
+            applicable GST/HST.
           </li>
           <li>
             <strong>Revisions.</strong> Two rounds on each deliverable. Further

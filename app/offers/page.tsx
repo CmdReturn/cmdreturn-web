@@ -96,8 +96,8 @@ export default function OffersPage() {
             ))}
           </ol>
           <p className="cr-prices-note">
-            Prices in US dollars. Canadian businesses are billed in Canadian
-            dollars plus applicable GST/HST.
+            Prices in US dollars. Canadian businesses pay the same amount in
+            Canadian dollars, plus applicable GST/HST.
           </p>
 
           <div className="cr-fit" aria-label="Who this is for">

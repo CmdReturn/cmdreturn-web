@@ -137,8 +137,8 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={0.16}>
             <p className="font-sans text-[13px] text-[#7c7c7c] mt-6">
-              Prices in US dollars. Canadian businesses are billed in Canadian
-              dollars plus applicable GST/HST.
+              Prices in US dollars. Canadian businesses pay the same amount in
+              Canadian dollars, plus applicable GST/HST.
             </p>
           </ScrollReveal>
 
