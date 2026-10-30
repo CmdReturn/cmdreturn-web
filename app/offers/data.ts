@@ -140,7 +140,7 @@ export const FAQ = [
   },
   {
     q: "Who does the work?",
-    a: "Dave Miller leads every project and is your single point of contact. Larger builds use a senior engineer from the team.",
+    a: "Dave Miller leads every project and is your single point of contact. Larger builds can bring in a second engineer from our bench.",
   },
   {
     q: "How do you use AI?",

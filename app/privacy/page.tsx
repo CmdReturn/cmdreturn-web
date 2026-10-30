@@ -42,7 +42,9 @@ export default function Privacy() {
           <li>which page the form was sent from</li>
         </ul>
         <p>
-          If you email or call us, we receive whatever you choose to include.
+          If you book a call, we receive your name, email address and the
+          answers you give in the booking form. If you email or call us, we
+          receive whatever you choose to include.
           We do not ask for payment details through this website.
         </p>
       </LegalSection>
@@ -66,7 +68,7 @@ export default function Privacy() {
       </LegalSection>
 
       <LegalSection title="Who processes it for us">
-        <p>We use two service providers:</p>
+        <p>We use three service providers:</p>
         <ul>
           <li>
             <strong>Vercel</strong> hosts this website and provides the
@@ -77,9 +79,14 @@ export default function Privacy() {
             <strong>Resend</strong> delivers the form contents to our inbox
             by email.
           </li>
+          <li>
+            <strong>Cal.com</strong> handles booking when you schedule a call
+            with us. It receives your name, your email address and the answers
+            you give in the booking form.
+          </li>
         </ul>
         <p>
-          Both are based in the United States, so your information may be
+          All three are based in the United States, so your information may be
           processed and stored there and be subject to US law. They may use it
           only to provide their service to us.
         </p>

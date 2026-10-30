@@ -321,7 +321,7 @@ export default function Work() {
           </div>
           <ScrollReveal delay={0.12}>
             <p className="font-mono text-[12px] text-[#7c7c7c] leading-[1.9] mt-12">
-              Stack: React · Node.js · PostgreSQL · AWS · 147 API routes · 269 migrations
+              Stack: React · Node.js · PostgreSQL · AWS · 300+ migrations
             </p>
           </ScrollReveal>
         </div>

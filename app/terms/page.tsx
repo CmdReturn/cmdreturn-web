@@ -29,7 +29,7 @@ export default function Terms() {
         <ul>
           <li>
             The content on this site, including text, design and screenshots,
-            belongs to {COMPANY}. You may link to it and quote short passages
+            belongs to {COMPANY} You may link to it and quote short passages
             with credit; please ask before reusing anything else.
           </li>
           <li>
