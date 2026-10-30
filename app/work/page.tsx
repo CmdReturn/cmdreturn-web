@@ -3,6 +3,7 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import Keycap from "@/components/Keycap";
 import Screenshot, { type Shot } from "@/components/Screenshot";
+import Testimonial, { TELETIME } from "@/components/Testimonial";
 
 export const metadata: Metadata = {
   title: "Work: CRM and point of sale for a three-location retailer | CmdReturn",
@@ -250,9 +251,13 @@ export default function Work() {
               />
             </div>
           </div>
-          <p className="font-mono text-[12px] text-[#7c7c7c] mb-16 lg:mb-24">
+          <p className="font-mono text-[12px] text-[#7c7c7c] mb-10 lg:mb-12">
             Screens shown with demo data.
           </p>
+
+          <ScrollReveal className="mb-16 lg:mb-24">
+            <Testimonial quote={TELETIME.full} />
+          </ScrollReveal>
 
           <ScrollReveal>
             <h3 className="font-sans text-[24px] lg:text-[28px] font-bold text-white tracking-[-0.02em] leading-[1.2] mb-8">
