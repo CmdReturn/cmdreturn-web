@@ -3,6 +3,7 @@ import Link from "next/link";
 import Terminal from "@/components/Terminal";
 import ScrollReveal from "@/components/ScrollReveal";
 import Keycap from "@/components/Keycap";
+import Testimonial, { TELETIME } from "@/components/Testimonial";
 import { OFFERS, STEPS } from "@/app/offers/data";
 
 export const metadata: Metadata = {
@@ -139,6 +140,14 @@ export default function Home() {
               Prices in US dollars. Canadian businesses are billed in Canadian
               dollars plus applicable GST/HST.
             </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.08} className="mt-10 lg:mt-12">
+            <Testimonial
+              quote={TELETIME.short}
+              surface="bg-carbon"
+              link={{ href: "/work", label: "See the system we built →" }}
+            />
           </ScrollReveal>
         </div>
       </section>
