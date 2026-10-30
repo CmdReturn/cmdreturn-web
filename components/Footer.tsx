@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { COMPANY, EMAIL, LINKEDIN_URL, PHONE, PHONE_E164 } from "@/lib/site";
+
+const LINK = "hover:text-white transition-colors duration-150";
 
 export default function Footer() {
   return (
@@ -20,24 +23,22 @@ export default function Footer() {
 
         <div className="font-mono text-[12px] text-[#7c7c7c] leading-[2.2] flex flex-col">
           <span>cmdreturn.io</span>
-          <span>cmdreturn.ca</span>
-          <a
-            href="mailto:dave@cmdreturn.io"
-            className="hover:text-white transition-colors duration-150"
-          >
-            dave@cmdreturn.io
+          <a href={`mailto:${EMAIL}`} className={LINK}>
+            {EMAIL}
           </a>
-          <a
-            href="tel:6475441775"
-            className="hover:text-white transition-colors duration-150"
-          >
-            647-544-1775
+          <a href={`tel:${PHONE_E164}`} className={LINK}>
+            {PHONE}
           </a>
           <span>Toronto, Ontario</span>
+          {LINKEDIN_URL && (
+            <a href={LINKEDIN_URL} className={LINK} rel="noopener noreferrer" target="_blank">
+              LinkedIn
+            </a>
+          )}
         </div>
 
         <div className="font-mono text-[12px] text-[#7c7c7c] leading-[2.2] flex flex-col">
-          <span>CmdReturn Inc.</span>
+          <span>{COMPANY}</span>
           <span>Federally Incorporated</span>
           <span>Ontario, Canada</span>
           <span>Privacy-first</span>
@@ -45,10 +46,18 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-dark-surface">
-        <div className="mx-auto max-w-[1200px] px-6 py-4">
-          <p className="font-mono text-[11px] text-[#7c7c7c]">
-            © 2025 CmdReturn Inc. All rights reserved. // Built by operators.
+        <div className="mx-auto max-w-[1200px] px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 font-mono text-[11px] text-[#7c7c7c]">
+          <p>
+            © {new Date().getFullYear()} {COMPANY} All rights reserved. // Built by operators.
           </p>
+          <nav aria-label="Legal" className="flex gap-6">
+            <Link href="/privacy" className={LINK}>
+              Privacy
+            </Link>
+            <Link href="/terms" className={LINK}>
+              Terms
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

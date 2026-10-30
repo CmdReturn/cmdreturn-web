@@ -117,3 +117,49 @@ export const STEPS = [
     body: "Code, hosting and data stay yours. Defects in delivered work are fixed free for 30 days after acceptance.",
   },
 ];
+
+// Who the offers are for. Shown on /offers.
+export const FIT = {
+  good: [
+    "Small businesses and founders with a defined problem",
+    "AI-built apps that work in the demo but not in production",
+    "One workflow to automate",
+  ],
+  not: [
+    "App-store submissions",
+    "Open-ended hourly work with no scope",
+    "Projects under $450",
+  ],
+};
+
+// The /offers FAQ. Also published as FAQPage structured data.
+export const FAQ = [
+  {
+    q: "Will you sign an NDA?",
+    a: "Yes, before you share code or data.",
+  },
+  {
+    q: "Who does the work?",
+    a: "Dave Miller leads every project and is your single point of contact. Larger builds use a senior engineer from the team.",
+  },
+  {
+    q: "How do you use AI?",
+    a: "AI-assisted development speeds up the build. Every change is reviewed, tested and deployed by a person, and you own all of it.",
+  },
+  {
+    q: "What if the scope grows?",
+    a: "Anything outside the written scope is a change order, quoted before it starts. Nothing is billed by surprise.",
+  },
+  {
+    q: "What timezone are you in?",
+    a: "Eastern time. Replies within one business day.",
+  },
+  {
+    q: "What do you need from me?",
+    a: "Read access to the code and hosting, a short call, and one decision-maker.",
+  },
+  {
+    q: "Why is the audit paid?",
+    a: "You get a written report you keep, and the full fee is credited if you go ahead with the fix.",
+  },
+];

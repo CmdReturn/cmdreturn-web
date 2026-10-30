@@ -1,7 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
+import { track } from "@vercel/analytics";
+import { BOOKING_URL } from "@/lib/site";
 
 const OFFER_OPTIONS = [
   { value: "", label: "Not sure yet" },
@@ -59,6 +62,10 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
       if (res.ok) {
+        track("quote_submitted", {
+          source: pathname,
+          offer: data.offer || "not-sure",
+        });
         setState("sent");
         form.reset();
         setOffer("");
@@ -153,7 +160,7 @@ export default function ContactForm() {
           className={`cr-key${state === "sending" ? " is-pressed" : ""}`}
           disabled={state === "sending"}
         >
-          <span>{state === "sending" ? "Sending" : "Send request"}</span>
+          <span>{state === "sending" ? "Sending" : "Get a fixed quote"}</span>
           <span className="cr-key-glyph" aria-hidden="true">
             ↵
           </span>
@@ -171,6 +178,19 @@ export default function ContactForm() {
           </p>
         )}
       </div>
+
+      <p className="cr-form-note">
+        By sending this you agree to our{" "}
+        <Link href="/privacy">Privacy Policy</Link>.
+      </p>
+      {BOOKING_URL && (
+        <p className="cr-form-note">
+          Prefer to talk?{" "}
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+            Book 20 minutes
+          </a>
+        </p>
+      )}
     </form>
   );
 }
