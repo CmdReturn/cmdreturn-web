@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 const OFFER_OPTIONS = [
@@ -18,19 +18,28 @@ const FALLBACK_EMAIL =
 
 type State = "idle" | "sending" | "sent" | "error";
 
+// The ?offer= value if it names a known offer, otherwise null.
+function offerFrom(params: URLSearchParams): string | null {
+  const wanted = params.get("offer") ?? "";
+  return OFFER_OPTIONS.some((o) => o.value === wanted) ? wanted : null;
+}
+
 export default function ContactForm() {
   const params = useSearchParams();
   const pathname = usePathname();
-  const [offer, setOffer] = useState("");
+  const [offer, setOffer] = useState(() => offerFrom(params) ?? "");
   const [state, setState] = useState<State>("idle");
   const [error, setError] = useState("");
   const [mailto, setMailto] = useState("");
 
-  // ?offer=... from the keycap links pre-selects the offer.
-  useEffect(() => {
-    const wanted = params.get("offer") ?? "";
-    if (OFFER_OPTIONS.some((o) => o.value === wanted)) setOffer(wanted);
-  }, [params]);
+  // ?offer=... from the keycap links pre-selects the offer. When the URL
+  // changes, update during render rather than in an effect.
+  const [seenParams, setSeenParams] = useState(params);
+  if (params !== seenParams) {
+    setSeenParams(params);
+    const wanted = offerFrom(params);
+    if (wanted !== null) setOffer(wanted);
+  }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
