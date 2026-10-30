@@ -46,7 +46,7 @@ export default function Navigation() {
             </Link>
           ))}
           <Keycap href="/contact" className="text-[13px]">
-            Get a quote
+            Get a fixed quote
           </Keycap>
         </div>
 
@@ -98,7 +98,7 @@ export default function Navigation() {
             onClick={() => setMobileOpen(false)}
             className="text-[14px] mt-2"
           >
-            Get a quote
+            Get a fixed quote
           </Keycap>
         </div>
       </div>

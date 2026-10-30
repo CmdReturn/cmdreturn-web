@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Suspense } from "react";
 import ContactForm from "./ContactForm";
 import { KeycapLabel as Keycap } from "@/components/Keycap";
-import { OFFERS, STEPS } from "./data";
+import JsonLd from "@/components/JsonLd";
+import { FAQ, FIT, OFFERS, STEPS } from "./data";
 import "./offers.css";
 
 export const metadata: Metadata = {
@@ -22,9 +23,20 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQ_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function OffersPage() {
   return (
     <div className="cr-offers">
+      <JsonLd data={FAQ_LD} />
       <section className="cr-hero">
         <div className="cr-wrap">
           <p className="cr-eyebrow">{"// fixed-price offers"}</p>
@@ -87,6 +99,25 @@ export default function OffersPage() {
             Prices in US dollars. Canadian businesses are billed in Canadian
             dollars plus applicable GST/HST.
           </p>
+
+          <div className="cr-fit" aria-label="Who this is for">
+            <div>
+              <h3>Good fit</h3>
+              <ul>
+                {FIT.good.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="cr-fit-not">
+              <h3>Not a fit</h3>
+              <ul>
+                {FIT.not.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -213,6 +244,21 @@ export default function OffersPage() {
                 Replies within one business day, Eastern time.
               </dd>
             </div>
+          </dl>
+        </div>
+      </section>
+
+      {/* Same background as the terms above, so the two read as one block. */}
+      <section className="cr-section cr-section--flush" id="faq" aria-labelledby="faq-h">
+        <div className="cr-wrap">
+          <h2 id="faq-h">Questions people ask</h2>
+          <dl className="cr-faq">
+            {FAQ.map((item) => (
+              <div key={item.q}>
+                <dt>{item.q}</dt>
+                <dd>{item.a}</dd>
+              </div>
+            ))}
           </dl>
         </div>
       </section>
