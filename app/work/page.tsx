@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import Keycap from "@/components/Keycap";
@@ -72,6 +73,112 @@ const results = [
   { number: "15+", label: "STAFF USING IT" },
   { number: "3,600+", label: "AUTOMATED TESTS" },
 ];
+
+type Shot = {
+  src: string;
+  width: number;
+  height: number;
+  label: string;
+  caption: string;
+  alt: string;
+};
+
+const northgateShots: Record<string, Shot> = {
+  quote: {
+    src: "/work/quote-builder.webp",
+    width: 1600,
+    height: 1000,
+    label: "QUOTE BUILDER",
+    caption: "A five-line kitchen quote, with live margin on every item.",
+    alt: "Quote builder in dark mode showing five kitchen appliances, a refrigerator, range, dishwasher, microwave and range hood, each with cost, MSRP, sell price, margin percentage and line total.",
+  },
+  checkout: {
+    src: "/work/pos-checkout.webp",
+    width: 1600,
+    height: 1000,
+    label: "POINT OF SALE",
+    caption: "Checkout mid-sale: HST, fees and eight ways to pay.",
+    alt: "Point-of-sale checkout with a three-item order summary including HST and an environmental handling fee, an amount due of $3,028.37, and eight payment options: cash, credit, debit, store credit, account, financing, phone order and e-transfer.",
+  },
+  discount: {
+    src: "/work/discount-approval.webp",
+    width: 1600,
+    height: 1000,
+    label: "MANAGER APPROVALS",
+    caption: "Discount requests reach a manager without leaving the POS.",
+    alt: "Discount approval dialog over the point-of-sale product grid, showing a 15% discount request on a sofa with the resulting margin, commission impact, the salesperson's note, and approve and deny buttons.",
+  },
+  serials: {
+    src: "/work/serial-registry.webp",
+    width: 1600,
+    height: 1000,
+    label: "INVENTORY",
+    caption: "Every serial number tracked from stockroom to customer.",
+    alt: "Serial number registry in dark mode listing serial numbers with product, sold status, store location and the customer each unit went to.",
+  },
+  override: {
+    src: "/work/price-override-approval.webp",
+    width: 1280,
+    height: 1001,
+    label: "MANAGER APPROVALS",
+    caption: "Price overrides arrive with the margin already worked out.",
+    alt: "Price override approval card showing retail, requested price, cost and margin at the requested price, a bar placing the request between cost and retail, a countdown timer, and approve, counter and deny buttons.",
+  },
+};
+
+const cleanopsShots: Shot[] = [
+  {
+    src: "/work/cleanops-invoice.webp",
+    width: 1024,
+    height: 758,
+    label: "INVOICING",
+    caption: "Invoices with line items and HST, ready to send.",
+    alt: "CleanOps Pro invoice for a coworking client with weekly office cleaning, window cleaning, supplies and 13% HST, a total of $1,113.05, and mark paid and void buttons.",
+  },
+  {
+    src: "/work/cleanops-schedule.webp",
+    width: 1600,
+    height: 1511,
+    label: "SCHEDULING",
+    caption: "A week of cleaning jobs, with unassigned work flagged.",
+    alt: "CleanOps Pro weekly schedule from 7am to 9pm with cleaning jobs for homes and offices placed on the calendar, and one unassigned job highlighted in yellow.",
+  },
+];
+
+function Screenshot({
+  shot,
+  sizes,
+  delay = 0,
+}: {
+  shot: Shot;
+  sizes: string;
+  delay?: number;
+}) {
+  return (
+    <ScrollReveal delay={delay} className="min-w-0">
+      <figure>
+        <div className="rounded-lg border border-border-visible overflow-hidden bg-dark-surface">
+          <Image
+            src={shot.src}
+            alt={shot.alt}
+            width={shot.width}
+            height={shot.height}
+            sizes={sizes}
+            className="block w-full h-auto"
+          />
+        </div>
+        <figcaption className="mt-3 flex flex-col gap-1">
+          <span className="font-mono text-[11px] text-teal tracking-[0.14em]">
+            {shot.label}
+          </span>
+          <span className="font-sans text-[14px] text-muted leading-[1.6]">
+            {shot.caption}
+          </span>
+        </figcaption>
+      </figure>
+    </ScrollReveal>
+  );
+}
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -157,9 +264,39 @@ export default function Work() {
             </h2>
           </ScrollReveal>
 
-          {/* TODO(screenshots): add real product screenshots here, one per
-              feature area or a single gallery above the grid. Use next/image
-              with explicit width/height, and blur or crop any customer data. */}
+          {/* Column widths follow each image's aspect ratio, so shots in a
+              row come out the same height without cropping. */}
+          <div className="flex flex-col gap-10 mb-6">
+            <Screenshot
+              shot={northgateShots.quote}
+              sizes="(min-width: 1200px) 1152px, 100vw"
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
+              <Screenshot
+                shot={northgateShots.checkout}
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+              <Screenshot
+                shot={northgateShots.discount}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                delay={0.06}
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1.279fr] gap-10 md:gap-6">
+              <Screenshot
+                shot={northgateShots.serials}
+                sizes="(min-width: 768px) 56vw, 100vw"
+              />
+              <Screenshot
+                shot={northgateShots.override}
+                sizes="(min-width: 768px) 44vw, 100vw"
+                delay={0.06}
+              />
+            </div>
+          </div>
+          <p className="font-mono text-[12px] text-[#7c7c7c] mb-12">
+            Screens shown with demo data.
+          </p>
 
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-visible border border-border-visible rounded-lg overflow-hidden">
             {features.map((feature, i) => (
@@ -256,8 +393,39 @@ export default function Work() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Also built */}
       <section className="bg-dark-surface py-[64px] lg:py-[120px]">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <SectionLabel>{"// also built"}</SectionLabel>
+          <ScrollReveal delay={0.08}>
+            <h2 className="font-sans text-[28px] lg:text-[32px] font-bold text-white tracking-[-0.02em] leading-[1.2] mb-4 max-w-[720px]">
+              CleanOps Pro
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.12}>
+            <p className="font-sans text-[17px] text-muted leading-[1.8] mb-12 max-w-[640px]">
+              A second product: scheduling, crews, invoicing and payments for
+              cleaning companies.
+            </p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-[1.351fr_1.059fr] gap-10 md:gap-6">
+            {cleanopsShots.map((shot, i) => (
+              <Screenshot
+                key={shot.src}
+                shot={shot}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                delay={i * 0.06}
+              />
+            ))}
+          </div>
+          <p className="font-mono text-[12px] text-[#7c7c7c] mt-6">
+            Screens shown with demo data.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-carbon py-[64px] lg:py-[120px]">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-sans font-[800] text-[32px] lg:text-[52px] text-white tracking-[-0.04em] leading-[1.1]">
