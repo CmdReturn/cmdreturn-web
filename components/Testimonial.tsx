@@ -8,7 +8,7 @@ export const TELETIME = {
   short:
     "Managers at every level can approve a negotiation in seconds, so deals get locked in, not lost. It has brought Teletime into the future.",
   attribution: "JD, Operations Manager, Teletime Superstore",
-  logo: { src: "/clients/teletime-logo.png", width: 7271, height: 1428 },
+  logo: { src: "/clients/teletime-logo.png", width: 6905, height: 1128 },
   alt: "Teletime Superstore",
 };
 
